@@ -1,0 +1,923 @@
+% =====================================================================
+% WPOM – Working Papers on Operations Management
+% LaTeX template – Universitat Politècnica de València
+% =====================================================================
+% HOW TO USE THIS TEMPLATE
+%   1. Fill in the metadata block below (title, authors, dates, DOI).
+%   2. Replace the body sections with your content.
+%   3. Add your references to referencias.bib (APA 7th style).
+%   4. Compile with: latexmk -pdf main.tex  (requires biber)
+% =====================================================================
+%
+% For blind review add the anonymous option: \documentclass[anonymous]{wpom-upv}
+% For preprints add the preprint option:    \documentclass[preprint]{wpom-upv}
+% Both can be combined:                     \documentclass[preprint,anonymous]{wpom-upv}
+\documentclass{wpom-upv}
+% \documentclass[anonymous]{wpom-upv}
+% \documentclass[preprint]{wpom-upv}
+% \documentclass[preprint,anonymous]{wpom-upv}
+
+% ---------------------------------------------------------------------
+% Packages – add your own below as needed
+
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}        % Required by biblatex + babel
+\usepackage{tabularx,booktabs}
+\usepackage{eurosym}
+
+% ---------------------------------------------------------------------
+% Bibliography – APA style (required by WPOM)
+
+\usepackage[
+	url      = false,
+	style    = apa,
+	hyperref = true,
+	backend  = biber,
+	]{biblatex}
+
+\bibliography{references}
+
+% ---------------------------------------------------------------------
+% Figures path – put your image files in figures/
+
+\graphicspath{{figures/}}
+
+% =====================================================================
+% PAPER METADATA – fill in before submission
+% =====================================================================
+
+% Journal volume, number and year (set by the editor)
+\renewcommand{\WPOMvolume}{17}
+\renewcommand{\WPOMnumber}{1}
+\renewcommand{\WPOMyear}{2026}
+\renewcommand{\WPOMpages}{1--20}
+
+% Full paper title (English)
+\paperTitle{Article Title: Subtitle if Needed}{}
+
+% Optional Spanish title – shown below the English title, bold + italic.
+% Remove or comment out if not needed.
+\paperTitleES{Título del artículo en castellano si es necesario}{}
+
+% Optional short title for the running head.
+% If omitted, the full paper title is used automatically.
+%\paperShortTitle{Short title for running head}{}
+
+% ---------------------------------------------------------------------
+% Authors – remove \author and \affil blocks for blind review.
+%
+% Syntax: \author[affil-label]{Given names}{Surname}[orcid-id][email]
+%   - [affil-label] : label linking to \affil (required; use [] for none)
+%   - {Given names} : full given name(s) – initials generated automatically
+%                     e.g. {John}, {John Steven}, {María José}
+%   - [orcid-id]    : optional – shows ORCID icon next to the name
+%   - [email]       : optional – marks corresponding author (footnote)
+%
+% Running head and APA citation list are built automatically.
+
+\author[a]{John Steven}{Smith}[0000-0001-2345-6789][j.smith@university.edu]
+\author[a]{Anne}{Johnson}[0000-0002-3456-7890]
+\author[b]{Carlos}{García}
+
+\affil[a]{Department of Operations Management, University of Valencia, Spain}
+\affil[b]{Business School, Polytechnic University, Madrid, Spain}
+
+% Submission dates (filled in by the editor)
+\received{2025-01-15}
+\accepted{2025-06-20}
+\published{2026-01-10}
+
+% DOI (assigned by the editor)
+\doi{https://doi.org/10.4995/wpom.xxxxx}
+
+% =====================================================================
+
+\begin{document}
+
+\maketitle
+
+% =====================================================================
+% HIGHLIGHTS – 3 to 5 bullet points summarising key contributions
+% Remove this environment if you prefer not to use it.
+% =====================================================================
+
+\begin{highlights}
+	\item First key finding or contribution of the paper.
+	\item Second key finding or contribution of the paper.
+	\item Third key finding or contribution of the paper.
+\end{highlights}
+
+% =====================================================================
+% ABSTRACT
+% =====================================================================
+
+\begin{abstract}
+
+Write your abstract here (150--250 words). The abstract must stand
+alone and cover: (1)~purpose, (2)~methodology, (3)~main findings, and
+(4)~originality/value. For papers written in Spanish, also provide a
+detailed English abstract so that international readers can access the
+main outcomes.
+
+\keywords: keyword one; keyword two; keyword three; keyword four.
+% At least one keyword must come from the OM taxonomy:
+% https://taxom.blogs.upv.es/
+% Append [protocol paper] or [data paper] to the keyword list
+% when appropriate.
+% SDG codes (e.g. SDG09) are entered in the OJS submission form,
+% not in the paper text.
+
+\end{abstract}
+
+% Optional Spanish abstract – comment for papers written in English.
+\begin{resumen}
+
+Escriba aquí el resumen en castellano\ldots
+
+\keywords: palabra clave uno; palabra clave dos; palabra clave tres.
+
+\end{resumen}
+
+% =====================================================================
+% MAIN BODY
+% =====================================================================
+
+\section{Introduction}
+
+% ---- WHAT THIS SECTION MUST COVER (WPOM guidelines) -----------------
+% Replace this guide with your introduction text. Every WPOM introduction
+% must address all six points below.
+% Source: https://polipapers.upv.es/index.php/WPOM/about/submissions
+% ---------------------------------------------------------------------
+
+\subsection{Submission Checklist}
+
+Complete before submitting.
+Full details: \href{https://polipapers.upv.es/index.php/WPOM/about/submissions}{polipapers.upv.es/…/about/submissions}.
+
+\begin{itemize}
+  \item[$\square$] Not previously published; not under consideration elsewhere.
+    \textit{Congress papers}: $\geq$30\% new content required; add a
+    first-page footnote with the full conference reference.
+  \item[$\square$] Topic within
+    \href{https://polipapers.upv.es/index.php/WPOM/focus}{Focus \& Scope}
+    (Operations Management or Human Resources Management).
+  \item[$\square$] Text follows the
+    \href{https://polipapers.upv.es/index.php/WPOM/about/submissions}{Author Guidelines};
+    submitted as Word/OpenOffice or this \LaTeX{} template (no APCs).
+  \item[$\square$] Blind-review instructions followed: \texttt{[anonymous]}
+    class option enabled; PDF metadata cleared
+    (\verb|\hypersetup{pdfauthor={}}|).
+  \item[$\square$] URLs provided for all references where available.
+  \item[$\square$] All authors meeting authorship criteria listed.
+    Authorship requires \emph{all three}: (1)~substantial contribution
+    to conception/design/data/analysis; (2)~drafting or critical
+    revision; (3)~final approval.
+  \item[$\square$] Author contributions in the \textit{Author Contributions}
+    section using the \href{https://credit.niso.org/}{CRediT taxonomy}.
+  \item[$\square$] Funding identified in \textit{Acknowledgments} and in
+    the OJS submission metadata, or stated that no funding was received.
+  \item[$\square$] Only heavily coined acronyms in body text; legend in
+    tables/figures.
+  \item[$\square$] At least one keyword from the
+    \href{https://taxom.blogs.upv.es/}{OM taxonomy}.
+    Append \texttt{[protocol paper]} or \texttt{[data paper]} if applicable.
+  \item[$\square$] SDG codes entered in the OJS submission form
+    (e.g.\ \texttt{SDG09 Industry, Innovation, and Infrastructure}).
+    See \href{https://jamg.blogs.upv.es/2021/05/09/2850/}{jamg.blogs.upv.es/…/2850}.
+\end{itemize}
+
+\subsection{Focus \& Scope}
+
+\href{https://polipapers.upv.es/index.php/WPOM/focus}{polipapers.upv.es/…/focus}
+— WPOM publishes theoretical and empirical articles in \textbf{English or
+Spanish} on Operations Management and Human Resources Management.
+
+\begin{table}[ht]
+  \caption{Topics covered by WPOM (non-exhaustive).
+           Source: \href{https://polipapers.upv.es/index.php/WPOM/focus}{polipapers.upv.es/…/focus}.}
+  \label{tab:scope}
+  \begin{tabularx}{\columnwidth}{XX}
+    \toprule
+    \multicolumn{2}{l}{\textbf{Operations Management}} \\
+    \midrule
+    Assembly line design              & Lean Manufacturing \\
+    Production \& operations mgmt.   & Logistics \\
+    Time study \& work design        & Quality Management \\
+    Transport routing optimisation   & Quantitative Methods \\
+    Material handling \& warehousing & Operations scheduling \\
+    Production planning              & Corporate Social Responsibility \\
+    Continuous improvement           & Job design \\
+    \quad (kaizen, TPM, JIT, TQM, VSM\ldots) & \\
+    Performance measures             & \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Human Resources Management}} \\
+    \midrule
+    Teamwork \& Continuous Improvement & High Involvement Work Practices \\
+    Leadership \& Participative Mgmt.  & Recruitment, selection, compensation \\
+    Training \& talent management      & \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Higher Education}} \\
+    \midrule
+    \multicolumn{2}{l}{Teaching innovation in Industrial Engineering \& OM} \\
+    \multicolumn{2}{l}{Research on Higher Education Learning-Collaboration} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Introduction structure}
+
+Replace this subsection with your introduction.
+Every WPOM introduction must address:
+
+\begin{itemize}
+  \item \textbf{Purpose} — What problem does the paper address and why does it matter?
+  \item \textbf{Related work} — What is the key prior literature and what gap remains?
+  \item \textbf{Methodology} — How were the objectives achieved?
+  \item \textbf{Findings} — What are the main results?
+  \item \textbf{Practical implications} — What are the consequences for practice?
+  \item \textbf{Originality/Value} — What is new and valuable, and to whom?
+\end{itemize}
+
+
+% =====================================================================
+
+\section{Related Work}
+
+% ---- ARTICLE TYPES AND THREE-STAGE PUBLISHING -----------------------
+% Replace this guide with your literature review.
+% Source: https://polipapers.upv.es/index.php/WPOM/about/submissions
+% ---------------------------------------------------------------------
+
+Summarise the state of the art relevant to your research question.
+Organise the literature thematically or chronologically and make
+explicit how your work extends, challenges, or complements prior
+contributions.
+Cite key references using APA author--year style:
+\parencite{maringarcia2021three}, \textcite{maringarcia2022case}, and
+\textcite{maringarcia2021teaching}.
+
+\subsection{Article Types}
+
+\href{https://polipapers.upv.es/index.php/WPOM/about/submissions}{polipapers.upv.es/…/about/submissions}
+— Select the type that best fits your contribution and cite the
+corresponding reference paper in your Related Work:
+
+\begin{description}
+  \item[Research Article] Standard double blind-reviewed empirical or
+    theoretical paper. No specific keyword required.
+
+  \item[Data Paper] Title/keywords must contain \textit{data paper}.
+    Sections: Introduction (context \& research question), Method,
+    quality analysis, dataset description (formats, structure, DOI),
+    access/reuse guidelines, future research.
+    Ref: \textcite{maringarcia2021three}.
+
+  \item[SLR Protocol] Systematic literature review protocol. Must
+    include: rationale, PICOS statement, full search strategy
+    (databases, date ranges, complete query string),
+    inclusion/exclusion criteria, and evaluation plan.
+
+  \item[Protocol Paper] Title/keywords must contain
+    \textit{protocol paper}. Required: variable definitions, relevant
+    literature, research questions, step-by-step methodology, optional
+    pilot test, timeline, ethics committee report if applicable.
+    Ref: \textcite{maringarcia2021three}.
+
+  \item[Professional Issues] Papers on OM relationships with other
+    disciplines, focused on resolving practical issues.
+
+  \item[Case Report] Title must contain \textit{case report}. Required:
+    Abstract (summary, methodology, conclusion), Introduction,
+    Theoretical background, Organisation/individual info, Timeline,
+    Diagnostic assessment, Intervention, Follow-up \& outcomes,
+    Discussion, Managerial implications, Informed consent.
+    Ref: \textcite{maringarcia2022case}.
+
+  \item[Teaching Experience] Action-research based. Required:
+    background \& objective, best-practice definition, context,
+    prior evidence, work plan/protocol, triangulation of evidence,
+    analysis of outcomes, limitations and future research.
+    Ref: \textcite{maringarcia2021teaching}.
+\end{description}
+
+\subsection{Three-Stage Publishing Model}
+
+WPOM supports a three-stage publishing model
+(\textcite{maringarcia2021three}):
+
+\begin{enumerate}
+  \item \textbf{Protocol Paper} — describes the research plan and
+    methodology \emph{before} data collection.
+  \item \textbf{Data Paper} — documents the collected dataset
+    independently of the analysis.
+  \item \textbf{Research Article} — presents the full study with
+    analysis, results, and conclusions.
+\end{enumerate}
+
+WPOM also encourages \textbf{replication studies}, particularly of
+papers published in the journal. Replication studies are reviewed in
+two stages following the protocol paper format; the first stage is
+submitted before outcomes are observed.
+
+% =====================================================================
+
+\section{Methodology}
+
+% ---- PAPER STRUCTURE GUIDELINES AND PEER REVIEW ---------------------
+% Replace this guide with your methodology.
+% Source: https://polipapers.upv.es/index.php/WPOM/about/submissions
+%         https://polipapers.upv.es/index.php/WPOM/peer_review
+% ---------------------------------------------------------------------
+
+Describe your research design, data sources, and analytical methods in
+sufficient detail to allow replication. Include an ethics statement
+when required by the study design.
+
+\subsection{Paper Structure Guidelines}
+
+Every WPOM paper must address all seven dimensions:
+
+\begin{description}
+  \item[Purpose] What are the reasons for writing the paper and the
+    aims of the research?
+  \item[Related work] What key research and literature is relevant?
+    How does this work extend, challenge, or complement it?
+  \item[Design/Methodology/Approach] How are the objectives achieved?
+    What is the primary method, approach, and theoretical scope?
+  \item[Findings] What was found? (analysis, discussion, results)
+  \item[Research limitations] What are the limits of the study and
+    identified constraints in the research process? What future
+    research directions follow?
+  \item[Practical implications] What outcomes and consequences for
+    practice, applications, and management are identified?
+  \item[Originality/Value] What is new? State the value of the paper
+    and to whom it is addressed.
+\end{description}
+
+\subsection{Peer Review Process}
+
+\href{https://polipapers.upv.es/index.php/WPOM/peer_review}{polipapers.upv.es/…/peer\_review}
+— WPOM uses \textbf{double-blind peer review}:
+
+\begin{enumerate}
+  \item \textbf{Editorial check} — the editorial team verifies
+    formatting and content compliance. Non-compliant manuscripts are
+    returned to authors.
+  \item \textbf{External review} — sent to two anonymous reviewers.
+    Average time: \textbf{3--6 weeks}.
+  \item \textbf{Decision} — the editor communicates
+    \textit{Rejected}, \textit{Accepted}, or
+    \textit{Accepted with modifications}, together with reviewer
+    comments to the corresponding author.
+  \item \textbf{Revision} — revised version re-reviewed by the same
+    reviewers. Authors attach a \textbf{letter to the editor}
+    detailing every change made; reviewer suggestions not followed
+    must be justified.
+\end{enumerate}
+
+\subsection{How to Prepare an Anonymous Submission}
+
+WPOM uses \textbf{double-blind peer review}, so the manuscript must not
+contain any information that could identify the authors. Follow the
+three steps below before submitting.
+
+\subsubsection{Step 1 — Enable the anonymous class option}
+
+Change \verb|\documentclass{wpom-upv}| to
+\verb|\documentclass[anonymous]{wpom-upv}|.
+This automatically suppresses:
+
+\begin{itemize}
+  \item Author names, affiliations, and ORCID links.
+  \item Corresponding author footnote.
+  \item Received / Accepted / Published dates.
+  \item Author names in the running header.
+  \item Author names in the ``How to cite'' box (replaced by ``Author(s)'').
+\end{itemize}
+
+\subsubsection{Step 2 — Wrap author-identifying blocks in the document body}
+
+The \textit{Acknowledgments}, \textit{Conflict of interests}, and
+\textit{Author Contributions} sections are already wrapped in
+\verb|\ifthenelse{\boolean{anonymous}}| so they are suppressed
+automatically. Ensure any other text that could identify you
+(self-citations, project names, institution references) is also removed
+or anonymised manually.
+
+\subsubsection{Step 3 — Remove personal information from the PDF metadata}
+
+Even if author names are removed from the text, they may still appear
+in the document metadata. Before submitting:
+
+\begin{description}
+  \item[Adobe Acrobat (PDF)] File $\to$ Properties $\to$ Description
+    tab. Clear the Author field $\to$ OK $\to$ Save.
+
+  \item[Microsoft Word (Windows)] File $\to$ Info $\to$ Check for
+    Issues $\to$ Inspect Document. Select all check boxes $\to$ Inspect
+    $\to$ Remove All $\to$ Close $\to$ Save.
+
+  \item[Microsoft Word (macOS)] Tools $\to$ Protect Document. Check
+    ``Remove personal information from this file on save'' $\to$ OK
+    $\to$ Save.
+
+  \item[\LaTeX{} / hyperref] The PDF author field is set by
+    \texttt{hyperref}. Add the following to your preamble to clear it:
+    \verb|\hypersetup{pdfauthor={}}|
+\end{description}
+
+% =====================================================================
+
+\section{Results}
+
+% ---- HOW TO USE TEMPLATE ELEMENTS -----------------------------------
+% Replace this guide with your results section.
+% Every table, figure, and equation must be referenced in the text
+% before it appears.
+% ---------------------------------------------------------------------
+
+Present your findings objectively. Report results without
+interpretation (save that for the Discussion section).
+
+\subsection{Typography}
+
+\textbf{Body text} is set in 10\,pt Times New Roman, 12\,pt leading.
+Paragraphs are separated by vertical space with no first-line indent.
+The following inline commands are available:
+
+\begin{description}
+  \item[\texttt{\textbackslash textbf\{\}}]
+        \textbf{Bold} — for key terms at first use or emphasis in tables.
+  \item[\texttt{\textbackslash textit\{\}}]
+        \textit{Italic} — for titles, foreign phrases, and light emphasis.
+  \item[\texttt{\textbackslash emph\{\}}]
+        \emph{Emphasis} — context-sensitive: produces italic in normal text
+        and upright in italic context; prefer this over \verb|\textit| in body text.
+  \item[\texttt{\textbackslash textsc\{\}}]
+        \textsc{Small Capitals} — for abbreviations or acronyms when typographically appropriate.
+  \item[\texttt{\textbackslash texttt\{\}}]
+        \texttt{Monospace} — for code, commands, file names, and class options.
+  \item[\texttt{\textbackslash verb||}]
+        \verb|Verbatim inline| — identical visual result to \verb|\texttt|
+        but the content is not processed by \LaTeX{} (safe for special characters).
+  \item[\texttt{\textbackslash textsuperscript\{\}}]
+        Superscript: 10\textsuperscript{th}, E\,=\,mc\textsuperscript{2}.
+  \item[\texttt{\textbackslash textsubscript\{\}}]
+        Subscript: H\textsubscript{2}O, CO\textsubscript{2}.
+  \item[\texttt{\textbackslash footnote\{\}}]
+        Footnotes\footnote{This is a footnote. Use sparingly — prefer in-text
+        parentheticals or a separate section.} appear at the bottom of
+        the page, numbered sequentially.
+\end{description}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\textbf{Bold text}
+\textit{Italic text}
+\emph{Emphasised text}
+\textsc{Small Caps}
+\texttt{Monospace text}
+\verb|verbatim inline|
+10\textsuperscript{th}
+H\textsubscript{2}O
+\footnote{Footnote text.}
+\end{verbatim}
+
+Long quotations (more than 40 words) should be set as a block quote
+using the \texttt{quote} environment:
+
+\begin{quote}
+  This is a block quotation. It is indented on both sides, set at the
+  same font size as the body text, and used for direct quotations
+  longer than roughly 40 words.
+\end{quote}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{quote}
+  Quoted text of more than 40 words \parencite{key}.
+\end{quote}
+\end{verbatim}
+
+% -----------------------------------------------------------------------
+
+\subsection{Tables}
+
+Captions go \emph{above} tables, introduced by the label
+\textbf{Table\,N.} set in the same font as body text.
+The caption text that follows is in the same size and weight, ending
+without a full stop if it is a short phrase.
+Use \verb|\tabular| for narrow content (Table~\ref{tab:narrow}) and
+\verb|\tabularx| with \texttt{X} columns when the table must span the
+full column width (Table~\ref{tab:wide}).
+
+\begin{table}[ht]
+  \centering
+  \caption{Narrow table — use plain \texttt{tabular} when content fits.}
+  \label{tab:narrow}
+  \begin{threeparttable}
+    \begin{tabular}{lccc}
+      \toprule
+      \textbf{Item} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} \\
+      \midrule
+      Product A & 120 & 145 &  98 \\
+      Product B &  87 &  92 & 110 \\
+      Product C &  54 &  61 &  73 \\
+      \midrule
+      Total     & 261 & 298 & 281 \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item \textit{Note.} Use \texttt{tablenotes} inside
+            \texttt{threeparttable} to add notes below the table
+            at its natural width. Source: \textcite{maringarcia2022case}.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{table}[ht]
+  \centering
+  \caption{Table caption.}
+  \label{tab:key}
+  \begin{threeparttable}
+    \begin{tabular}{lccc}
+      \toprule
+      \textbf{Item} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} \\
+      \midrule
+      Row A & 1 & 2 & 3 \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item \textit{Note.} Note text.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+\end{verbatim}
+
+\begin{table}[ht]
+  \centering
+  \caption{Wide table — \texttt{tabularx} stretches to the full column width.}
+  \label{tab:wide}
+  \begin{tabularx}{\columnwidth}{Xrrrr}
+    \toprule
+    \textbf{Stage} & \textbf{Duration (d)} & \textbf{Cost (\euro)} & \textbf{Resources} & \textbf{Risk} \\
+    \midrule
+    Requirements analysis  & 10 & 2{,}400 & 3 & Low    \\
+    System design          & 15 & 5{,}100 & 4 & Medium \\
+    Implementation         & 30 & 9{,}600 & 6 & High   \\
+    Testing \& validation  & 12 & 3{,}200 & 3 & Medium \\
+    Deployment             &  5 & 1{,}500 & 2 & Low    \\
+    \midrule
+    Total                  & 72 & 21{,}800 & --- & --- \\
+    \bottomrule
+  \end{tabularx}
+  \tablenote{\textit{Note.} Use \texttt{\textbackslash tablenote} outside
+             \texttt{threeparttable} for full-width notes.}
+\end{table}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{table}[ht]
+  \centering
+  \caption{Wide table caption.}
+  \label{tab:key}
+  \begin{tabularx}{\columnwidth}{Xrr}
+    \toprule
+    \textbf{Stage} & \textbf{Duration (d)} & \textbf{Cost} \\
+    \midrule
+    Row A & 10 & 1{,}000 \\
+    \bottomrule
+  \end{tabularx}
+  \tablenote{\textit{Note.} Note text.}
+\end{table}
+\end{verbatim}
+
+\subsection{Figures}
+
+Captions go \emph{below} figures, introduced by the label
+\textbf{Figure\,N.} followed by the caption text.
+Store images in \texttt{figures/} and include without extension
+(Figure~\ref{fig:example}).
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\columnwidth]{fig-example}
+  \caption{Example figure. Replace \texttt{fig-example} with your
+           image filename (no extension) from the \texttt{figures/} folder.}
+  \label{fig:example}
+\end{figure}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\columnwidth]{filename}
+  \caption{Figure caption.}
+  \label{fig:key}
+\end{figure}
+\end{verbatim}
+
+\subsection{Equations}
+
+Number equations sequentially and reference as Eq.~(\ref{eq:example}).
+In appendices numbering resets per section: (A.1), (A.2), \ldots
+
+\begin{equation}
+  \label{eq:example}
+  \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\end{equation}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{equation}
+  \label{eq:key}
+  \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\end{equation}
+\end{verbatim}
+
+\subsection{Lists}
+
+Unordered, ordered, and custom-marker lists:
+
+\begin{itemize}
+  \item Plain bullet item.
+  \item[$\square$] Checkbox marker — used for checklists
+        (\verb|\item[$\square$]|).
+  \item[$\blacktriangleright$] Any symbol as marker via
+        \verb|\item[symbol]|.
+\end{itemize}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{itemize}
+  \item Plain bullet item.
+  \item[$\square$] Checkbox item.
+  \item[$\blacktriangleright$] Custom marker item.
+\end{itemize}
+\end{verbatim}
+
+\begin{enumerate}
+  \item First ordered item.
+  \item Second item with a longer description that wraps to the next
+        line, showing how indentation behaves.
+  \item Third item.
+\end{enumerate}
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\begin{enumerate}
+  \item First item.
+  \item Second item.
+  \item Third item.
+\end{enumerate}
+\end{verbatim}
+
+\subsection{Verbatim}
+
+Use \verb|\verb| for short inline snippets and the \texttt{verbatim}
+environment for multi-line blocks of code or plain text that must be
+reproduced character-for-character without \LaTeX{} processing.
+
+\subsubsection{Inline verbatim}
+
+Wrap the content between any pair of identical delimiters (commonly
+\texttt{|} or \texttt{+}):
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\verb|text with $special% chars|
+\verb+another \example+
+\end{verbatim}
+
+Both produce monospaced output identical to \verb|\texttt|, but special
+characters are not interpreted by \LaTeX{}.
+
+\subsubsection{Block verbatim}
+
+Use the \texttt{verbatim} environment for multi-line output:
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+function result = myFunction(x, y)
+    result = x.^2 + y.^2;
+end
+\end{verbatim}
+
+\noindent The \texttt{verbatim*} variant makes spaces visible as
+\verb*| |:
+
+\begin{verbatim*}
+x = 1;   y = 2;   z = x + y;
+\end{verbatim*}
+
+\subsubsection{Limitations}
+
+\verb|\verb| and \texttt{verbatim} cannot be used inside macro
+arguments (e.g.\ inside \verb|\caption{}| or \verb|\footnote{}|). In
+those contexts use \verb|\texttt{}| with \verb|\textbackslash| for
+backslashes and braces escaped as \verb|\{| and \verb|\}|.
+
+\subsection{Citations and links}
+
+Body text is set in 10\,pt Times New Roman, 12\,pt leading, no
+first-line indent; paragraphs separated by vertical space.
+
+In-text citations use \textbf{APA author--year} style.
+Use \verb|\parencite{}| for parenthetical citations
+\parencite{maringarcia2021three} and \verb|\textcite{}| when the author is
+part of the sentence, as noted by \textcite{maringarcia2022case}.
+Multiple citations: \parencite{maringarcia2021three,maringarcia2021teaching}.
+
+Clickable hyperlinks use \verb|\href{url}{text}|:
+\href{https://polipapers.upv.es/index.php/WPOM}{WPOM journal}.
+Bare URLs use \verb|\url{}|:
+\url{https://polipapers.upv.es/index.php/WPOM}.
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\parencite{key}                    % (Author, year)
+\textcite{key}                     % Author (year)
+\parencite{key1,key2}              % (Author1, year1; Author2, year2)
+\href{https://example.com}{Label}  % clickable link
+\url{https://example.com}          % bare URL
+\end{verbatim}
+
+\subsection{Headings}
+
+The template provides three body heading levels:
+
+\begin{description}
+  \item[\texttt{\textbackslash section\{\}}]
+        First level — large, bold, \textcolor{WPOMaccent}{accent-coloured},
+        preceded by a coloured rule. Numbered automatically (1, 2, 3~\ldots).
+  \item[\texttt{\textbackslash subsection\{\}}]
+        Second level — bold, same accent colour, smaller than \verb|\section|.
+        Numbered as 1.1, 1.2, \ldots
+  \item[\texttt{\textbackslash subsubsection\{\}}]
+        Third level — italic, no number (run-in or standalone paragraph heading).
+\end{description}
+
+Use \verb|\section*{}|, \verb|\subsection*{}|, \verb|\subsubsection*{}| to
+suppress numbering for a specific heading (e.g.\ unnumbered appendix
+sub-sections).
+
+The corresponding \LaTeX{} markup is:
+
+\begin{verbatim}
+\section{First-level heading}
+\subsection{Second-level heading}
+\subsubsection{Third-level heading}
+\section*{Unnumbered section}
+\end{verbatim}
+
+\subsubsection{Third-level heading example}
+
+This paragraph follows a third-level heading. Note the italic style and
+the absence of a number.
+
+% =====================================================================
+
+\section{Discussion}
+
+Interpret the results in light of the research questions and prior
+literature. Address the following:
+
+\begin{itemize}
+	\item How do the findings extend, challenge, or complement prior contributions?
+	\item \textbf{Research limitations}: What are the boundaries of the study? What threats to validity or generalisability exist?
+	\item \textbf{Future research}: What open questions or follow-up studies does this work suggest?
+	\item \textbf{Practical implications}: What are the consequences for practitioners, managers, or policy-makers?
+\end{itemize}
+
+% =====================================================================
+
+\section{Conclusions}
+
+Summarise the paper by explicitly addressing each of the following points
+required by \href{https://polipapers.upv.es/index.php/WPOM/about/submissions}{WPOM's author guidelines}:
+
+\begin{itemize}
+	\item \textbf{Purpose}: Restate what problem was addressed and why.
+	\item \textbf{Findings}: What was found? Briefly summarise key results.
+	\item \textbf{Research limitations}: Identify the main limitations and constraints of the study.
+	\item \textbf{Practical implications}: What outcomes and consequences for practice, applications, or management are identified?
+	\item \textbf{Originality/Value}: What is new? State explicitly the contribution of the paper and to whom it is valuable.
+	\item \textbf{Future research}: What are the recommended directions for follow-up work?
+\end{itemize}
+
+% =====================================================================
+% ACKNOWLEDGMENTS, CONFLICT OF INTERESTS, AUTHOR CONTRIBUTIONS
+% These blocks must be removed for blind review.
+% When the anonymous class option is active the \authorblock headings are
+% suppressed automatically. Wrap the content itself in \ifthenelse as shown
+% below so the entire block disappears in anonymous mode.
+% =====================================================================
+
+\ifthenelse{\boolean{anonymous}}{}{%
+
+\authorblock{Acknowledgments}
+
+Information on the source of funding is included (indicating the funding agency (s) and the code (s) of the project (s) within the framework (s) of which the research has been developed), or it is indicated that ``no funding has been received for the development of the research.''. This data must be referenced by the authors in the acknowledgments section and in the metadata that are entered in the submission process.
+
+\authorblock{Conflict of interests}
+
+The authors declare no conflict of interests.
+
+\authorblock{Author Contributions}
+
+Describe individual contributions using the CRediT taxonomy
+(see Table~\ref{tab:credit} in Appendix~\ref{app:credit}).
+Example: J.S.S., Conceptualization, Methodology, Writing~-- original
+draft; A.J., Data curation, Formal analysis; C.G., Supervision,
+Writing~-- review \& editing.
+
+}
+
+% =====================================================================
+% APPENDIX – optional; remove if not needed
+% =====================================================================
+
+\appendix
+
+\section{Supplementary material}
+
+Appendix content goes here. Equations in appendices are numbered
+(A.1), (A.2),~\ldots as well as Figures (e.g. Figure~A.1) and tables (e.g. Table~A.1). For example, an equation in the appendix would be:
+
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+% CRediT appendix is suppressed in anonymous mode (linked to Author Contributions)
+\ifthenelse{\boolean{anonymous}}{}{%
+
+\section{CRediT authorship contribution roles}
+\label{app:credit}
+
+Table~\ref{tab:credit} lists the 14 CRediT roles and their definitions.
+
+\begin{table}[ht]
+\begin{minipage}{\columnwidth}
+\captionof{table}{CRediT authorship contribution roles and definitions.}
+\label{tab:credit}
+\begin{tabularx}{\columnwidth}{lX}
+	\toprule
+	\textbf{CRediT role} & \textbf{Definition} \\
+	\midrule
+	Conceptualization       & Ideas; formulation or evolution of overarching research goals and aims. \\
+	\midrule
+	Data curation           & Management activities to annotate, scrub data and maintain research data (including software code, where necessary for interpreting the data) for initial use and later re-use. \\
+	\midrule
+	Formal analysis         & Application of statistical, mathematical, computational, or other formal techniques to analyze or synthesize study data. \\
+	\midrule
+	Funding acquisition     & Acquisition of the financial support for the project leading to this publication. \\
+	\midrule
+	Research                & Conducting a research process, specifically performing the experiments, or data/evidence collection. \\
+	\midrule
+	Methodology             & Development or design of methodology; creation of models. \\
+	\midrule
+	Project administration  & Management and coordination responsibility for the research activity planning and execution. \\
+	\midrule
+	Resources               & Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools. \\
+	\midrule
+	Software                & Programming, software development; designing computer programs; implementation of the computer code and supporting algorithms; testing of existing code components. \\
+	\midrule
+	Supervision             & Oversight and leadership responsibility for the research activity planning and execution, including mentorship external to the core team. \\
+	\midrule
+	Validation              & Verification of the overall replication/reproducibility of results/experiments and other research outputs. \\
+	\midrule
+	Visualization           & Preparation, creation and/or presentation of the published work, specifically visualization/data presentation. \\
+	\midrule
+	Writing -- original draft     & Preparation, creation and/or presentation of the published work, specifically writing the initial draft (including substantive translation). \\
+	\midrule
+	Writing -- review \& editing  & Critical review, commentary or revision of the published work by those from the original research group, including pre- or post-publication stages. \\
+	\bottomrule
+\end{tabularx}
+\end{minipage}
+\end{table}
+
+}
+
+% =====================================================================
+% REFERENCES
+% =====================================================================
+
+\printbibliography
+
+% =====================================================================
+
+\end{document}

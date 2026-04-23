@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="148mm"
+   height="105mm"
+   viewBox="0 0 148 105"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="fig-example.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="fig-example.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.0234325"
+     inkscape:cx="279.47559"
+     inkscape:cy="198.4252"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:#111111;stroke-width:3.009"
+       id="rect1"
+       width="144.35863"
+       height="101.4695"
+       x="1.8306351"
+       y="1.8306351" />
+    <text
+       xml:space="preserve"
+       style="font-weight:800;font-stretch:condensed;font-size:19.05px;line-height:0.8;font-family:Futura;-inkscape-font-specification:'Futura, Ultra-Bold Condensed';letter-spacing:-1.32292px;word-spacing:-0.0185208px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:#111111;stroke-width:3.009"
+       x="23.144459"
+       y="54.919056"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#111111;stroke:none;stroke-width:3.009"
+         x="23.144459"
+         y="54.919056">Figure example</tspan></text>
+  </g>
+</svg>
