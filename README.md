@@ -18,7 +18,7 @@ This is an unofficial copy of the template, kept by Alberto Lacort. The class he
 
 1. Fill in the metadata block at the top of `main.tex` (title, authors, dates, DOI).
 2. Replace the body sections with your text.
-3. Put your references in a `.bib` file. WPOM asks for APA 7th style, which the class sets through `biblatex`.
+3. Put your references in a `.bib` file. WPOM asks for APA 7th style, which `main.tex` sets through `biblatex` (backend `biber`).
 4. Compile with `latexmk -pdf main.tex`. It needs `biber`.
 
 Class options, which can be combined:
