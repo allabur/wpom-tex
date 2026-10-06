@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wpom-upv}[2026/04/15 Working Papers on Operations Management - Universitat Politecnica de Valencia. Versioned from Editorial UPV. Author: Alberto Lacort]
+\ProvidesClass{wpom-upv}[2026/04/15 Working Papers on Operations Management - Universitat Politecnica de Valencia. Author and copyright holder: Alberto Lacort. Use granted to Editorial UPV.]
 \LoadClass[10pt,onecolumn]{article}
 
 % ======================================================================

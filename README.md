@@ -2,7 +2,7 @@
 
 LaTeX class and example article for **WPOM, Working Papers on Operations Management** (Editorial Universitat Politècnica de València, <https://polipapers.upv.es/index.php/WPOM>).
 
-This is an unofficial copy of the template, kept by Alberto Lacort. The class header says it is versioned from the Editorial UPV template.
+The class and the example are the work of Alberto Lacort. Editorial UPV has permission to use them for WPOM. See [Licence](#licence).
 
 ## Files
 
@@ -33,7 +33,11 @@ Class options, which can be combined:
 
 ## Licence
 
-There is no open licence yet. The class derives from the template of Editorial UPV, so the licence has to be agreed with the editorial first. The logos in `logos/` belong to the UPV and to WPOM. Until then, use it to prepare WPOM submissions and ask before reusing it elsewhere.
+Copyright (c) 2026 Alberto Lacort. All rights reserved. See [LICENSE](LICENSE).
+
+Alberto Lacort holds the copyright of the class and the example. He has granted Editorial UPV the right to use them for WPOM. No other licence is granted: to reuse or modify the files for another purpose, ask the author.
+
+The logos in `logos/` belong to the UPV and WPOM, and to Creative Commons. They are not covered by this licence.
 
 ## Contact
 
